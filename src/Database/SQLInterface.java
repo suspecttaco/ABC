@@ -6,22 +6,34 @@ import java.sql.SQLException;
 
 public class SQLInterface {
     //TODO: MySQL connection
-    public static void main(String[] args) {
-        String connectionUrl =
-                "jdbc:sqlserver://yourserver.database.windows.net:1433;"
-                        + "database=AdventureWorks;"
-                        + "user=yourusername@yourserver;"
-                        + "password=<password>;"
-                        + "encrypt=true;"
-                        + "trustServerCertificate=false;"
-                        + "loginTimeout=30;";
+     //Funcion para conectar con una base de datos local
+     public static Connection ConectarBD(String bd, String user, String pass){
+        Connection conexion;
 
-        try (Connection connection = DriverManager.getConnection(connectionUrl);) {
-            // Code here.
+        String host = "jdbc:mysql://localhost/";
+
+        System.out.println("Conectando....");
+
+        try {
+            conexion = DriverManager.getConnection(host + bd, user, pass);
+            System.out.println("Conexion exitosa!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+
         }
-        // Handle any errors that may have occurred.
-        catch (SQLException e) {
-            e.printStackTrace();
+
+        return conexion;
+    }
+
+    //Funcion para desconectarse de la base de datos
+    public static void Desconexion(Connection cb){
+        try {
+            cb.close();
+            System.out.println("Desconectado correctamente!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 }
