@@ -3,7 +3,7 @@ import java.awt.Color;
 import helper_classes.*;
 
 public class WindowBuilder {
-  public static void main(String[] args) {
+  public static void startUi() {
 
      JFrame frame = new JFrame("My Awesome Window");
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,8 +29,7 @@ public class WindowBuilder {
      textNom.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 25));
      textNom.setBackground(Color.decode("#ffffff"));
      textNom.setForeground(Color.decode("#737674"));
-     textNom.setBorder(new RoundedBorder(2, Color.decode("#626262"), 1));
-     OnFocusEventHelper.setOnFocusText(textNom, "Your Input!", Color.decode("#1b1b1b"),   Color.decode("#737674"));
+     //textNom.setBorder(new RoundedBorder(2, Color.decode("#626262"), 1));
      panel.add(textNom);
 
      JTextField textCant = new JTextField("");
@@ -38,25 +37,23 @@ public class WindowBuilder {
      textCant.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 25));
      textCant.setBackground(Color.decode("#ffffff"));
      textCant.setForeground(Color.decode("#737674"));
-     textCant.setBorder(new RoundedBorder(2, Color.decode("#626262"), 1));
-     OnFocusEventHelper.setOnFocusText(textCant, "Your Input!", Color.decode("#1b1b1b"),   Color.decode("#737674"));
+     //textCant.setBorder(new RoundedBorder(2, Color.decode("#626262"), 1));
      panel.add(textCant);
 
      JTextArea textLog = new JTextArea("");
-     textLog.setBounds(500, 100, 350, 250);
+     textLog.setBounds(520, 100, 350, 250);
      textLog.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 18));
      textLog.setBackground(Color.decode("#ffffff"));
      textLog.setForeground(Color.decode("#737674"));
-     textLog.setBorder(new RoundedBorder(2, Color.decode("#626262"), 1));
-     OnFocusEventHelper.setOnFocusText(textLog, "Your long Input!", Color.decode("#1b1b1b"),   Color.decode("#737674"));
+     //textLog.setBorder(new RoundedBorder(2, Color.decode("#626262"), 1));
      panel.add(textLog);
 
      JButton bntAdd = new JButton("Añadir");
-     bntAdd.setBounds(120, 250, 150, 40);
+     bntAdd.setBounds(100, 250, 150, 40);
      bntAdd.setBackground(Color.decode("#ffffff"));
      bntAdd.setForeground(Color.decode("#1b1b1b"));
      bntAdd.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 20));
-     bntAdd.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
+     //bntAdd.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
      bntAdd.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(bntAdd, Color.decode("#c2c2c2"), Color.decode("#ffffff"));
      panel.add(bntAdd);
@@ -66,17 +63,17 @@ public class WindowBuilder {
      btnQry.setBackground(Color.decode("#ffffff"));
      btnQry.setForeground(Color.decode("#1b1b1b"));
      btnQry.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 20));
-     btnQry.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
+     //btnQry.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
      btnQry.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(btnQry, Color.decode("#c2c2c2"), Color.decode("#ffffff"));
      panel.add(btnQry);
 
      JButton btnDel = new JButton("Borrar");
-     btnDel.setBounds(120, 300, 150, 40);
+     btnDel.setBounds(100, 300, 150, 40);
      btnDel.setBackground(Color.decode("#ffffff"));
      btnDel.setForeground(Color.decode("#1b1b1b"));
      btnDel.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 20));
-     btnDel.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
+     //btnDel.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
      btnDel.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(btnDel, Color.decode("#c2c2c2"), Color.decode("#ffffff"));
      panel.add(btnDel);
@@ -86,7 +83,7 @@ public class WindowBuilder {
      btnUpdt.setBackground(Color.decode("#ffffff"));
      btnUpdt.setForeground(Color.decode("#1b1b1b"));
      btnUpdt.setFont(CustomFontLoader.loadFont("./resources/fonts/Lexend.ttf", 20));
-     btnUpdt.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
+     //btnUpdt.setBorder(new RoundedBorder(4, Color.decode("#626262"), 1));
      btnUpdt.setFocusPainted(false);
      OnClickEventHelper.setOnClickColor(btnUpdt, Color.decode("#c2c2c2"), Color.decode("#ffffff"));
      panel.add(btnUpdt);
