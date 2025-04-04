@@ -32,7 +32,8 @@ public class ABCProductos extends JFrame implements ActionListener {
         frame.add(panel);
         frame.setVisible(true);
     }
-
+    
+    //Config de etiquetas
     private void setLabels() {
         labelNom.setBounds(50, 100, 120, 30);
         labelNom.setFont(new java.awt.Font("Segoe UI", 0, 24));
@@ -46,22 +47,30 @@ public class ABCProductos extends JFrame implements ActionListener {
         panel.add(labelLog);
     }
 
+    //config de textbox
     private void setTexts() {
         textNom.setBounds(200, 100, 250, 37);
         textNom.setFont(new java.awt.Font("Segoe UI", 0, 24));
-        textNom.setToolTipText("En este campo ingrese el nombre del producto.");
+        textNom.setToolTipText("En este campo ingrese el nombre del producto a añadir/actualizar/consultar/eliminar.");
         panel.add(textNom);
 
         textCant.setBounds(200, 150, 250, 37);
         textCant.setFont(new java.awt.Font("Segoe UI", 0, 24));
-        textCant.setToolTipText("En este campo ingrese la cantidad del producto.");
+        textCant.setToolTipText("En este campo ingrese la cantidad del producto a añadir/actualizar.");
         panel.add(textCant);
 
-        textLog.setBounds(520, 100, 350, 250);
-        textLog.setFont(new java.awt.Font("Segoe UI", 0, 24));
-        panel.add(textLog);
+        //Esto es un TextArea - se agregaron los scrolls verticales y horizontales
+        //para el scroll el text area ya no se agrea solo el scroll se añade al JPanel
+        textLog.setFont(new java.awt.Font("Segoe UI", 0, 18));
+        textLog.setEditable(false);
+        JScrollPane scrollBar = new JScrollPane(textLog);
+        scrollBar.setBounds(520, 100, 350, 250);
+        scrollBar.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollBar.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        panel.add(scrollBar);
     }
 
+    //config de botones
     private void setButtons() {
         bntAdd.setBounds(50, 250, 200, 40);
         bntAdd.setFont(new java.awt.Font("Segoe UI", 0, 24));
@@ -84,15 +93,51 @@ public class ABCProductos extends JFrame implements ActionListener {
         panel.add(btnUpdt);
     }
 
+    //eventos de los botones
     public void actionPerformed(ActionEvent x) {
-
-        if (x.getSource() == bntAdd) {
+        
+        if (x.getSource() == bntAdd) { //boton añadir
             try {
-                // "producto" es mi tabla dentro de mi bd, cambienla segun sus necesidades
                 String query = "insert into producto (nombre,cantidad) values ('" + textNom.getText() + "','" + textCant.getText() + "')";
                 Statement st = bdConnection.createStatement();
                 int rowsAffected = st.executeUpdate(query);
                 JOptionPane.showMessageDialog(null,rowsAffected + " rows effected");
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                throw new RuntimeException(e);
+            }
+        } else if (x.getSource() == btnDel) { //boton eliminar
+            try {
+                String query = "delete from producto where nombre = '" + textNom.getText() + "'";
+                Statement st = bdConnection.createStatement();
+                int rowsAffected = st.executeUpdate(query);
+                JOptionPane.showMessageDialog(null,rowsAffected + " rows effected");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                throw new RuntimeException(e);
+            }
+        } else if (x.getSource() == btnUpdt) { //boton actualizar
+            try {
+                String query = "update producto set cantidad = '" + textCant.getText() + "' where nombre = '" + textNom.getText() + "'";
+                Statement st = bdConnection.createStatement();
+                int rowsAffected = st.executeUpdate(query);
+                JOptionPane.showMessageDialog(null,rowsAffected + " rows effected");
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                throw new RuntimeException(e);
+            }
+        } else if (x.getSource() == btnQry) { //boton consultar
+            try {
+                //"producto" es mi tabla dentro de mi bd, cambienla segun sus necesidades, igual las columnas.
+                String query = "select * from producto where nombre = '" + textNom.getText() + "'";
+                Statement st = bdConnection.createStatement();
+                ResultSet resultSet = st.executeQuery(query);
+                textLog.setText("");
+
+                while (resultSet.next()) {
+                    textLog.append("id: " + resultSet.getString("id_producto") +" nombre: " + resultSet.getString("nombre") + " cantidad: " + resultSet.getString("cantidad")+ "\n");
+                }
+
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
                 throw new RuntimeException(e);

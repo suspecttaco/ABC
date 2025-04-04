@@ -1,8 +1,6 @@
 package Database;
 
-import java.sql.Connection; //SQL library
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*; //SQL library
 
 public class DBFunc {
      //Funcion para conectar con una base de datos local
@@ -26,7 +24,7 @@ public class DBFunc {
     }
 
     //Funcion para desconectarse de la base de datos
-    public static void Desconexion(Connection cb){
+    public static void desconectarBD(Connection cb){
         try {
             cb.close();
             System.out.println("Desconectado correctamente!");
