@@ -4,8 +4,7 @@ import java.sql.Connection; //SQL library
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class SQLInterface {
-    //TODO: MySQL connection
+public class DBFunc {
      //Funcion para conectar con una base de datos local
      public static Connection ConectarBD(String bd, String user, String pass){
         Connection conexion;
@@ -36,4 +35,5 @@ public class SQLInterface {
             throw new RuntimeException(e);
         }
     }
+    
 }
