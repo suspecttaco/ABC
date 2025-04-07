@@ -1,6 +1,7 @@
 package Interfaces;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
@@ -36,11 +37,11 @@ public class ABCProductos extends JFrame implements ActionListener {
     //Config de etiquetas
     private void setLabels() {
         labelNom.setBounds(50, 100, 120, 30);
-        labelNom.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        labelNom.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         panel.add(labelNom);
 
         labelCant.setBounds(50, 150, 120, 30);
-        labelCant.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        labelCant.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         panel.add(labelCant);
 
         labelLog.setBounds(520, 50, 50, 50);
@@ -50,18 +51,18 @@ public class ABCProductos extends JFrame implements ActionListener {
     //config de textbox
     private void setTexts() {
         textNom.setBounds(200, 100, 250, 37);
-        textNom.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        textNom.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         textNom.setToolTipText("En este campo ingrese el nombre del producto a añadir/actualizar/consultar/eliminar.");
         panel.add(textNom);
 
         textCant.setBounds(200, 150, 250, 37);
-        textCant.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        textCant.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         textCant.setToolTipText("En este campo ingrese la cantidad del producto a añadir/actualizar.");
         panel.add(textCant);
 
         //Esto es un TextArea - se agregaron los scrolls verticales y horizontales
         //para el scroll el text area ya no se agrea solo el scroll se añade al JPanel
-        textLog.setFont(new java.awt.Font("Segoe UI", 0, 18));
+        textLog.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 18));
         textLog.setEditable(false);
         JScrollPane scrollBar = new JScrollPane(textLog);
         scrollBar.setBounds(520, 100, 350, 250);
@@ -73,22 +74,22 @@ public class ABCProductos extends JFrame implements ActionListener {
     //config de botones
     private void setButtons() {
         bntAdd.setBounds(50, 250, 200, 40);
-        bntAdd.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        bntAdd.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         bntAdd.addActionListener(this);
         panel.add(bntAdd);
 
         btnQry.setBounds(280, 250, 200, 40);
-        btnQry.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        btnQry.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         btnQry.addActionListener(this);
         panel.add(btnQry);
 
         btnDel.setBounds(50, 300, 200, 40);
-        btnDel.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        btnDel.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         btnDel.addActionListener(this);
         panel.add(btnDel);
 
         btnUpdt.setBounds(280, 300, 200, 40);
-        btnUpdt.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        btnUpdt.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 24));
         btnUpdt.addActionListener(this);
         panel.add(btnUpdt);
     }
@@ -103,7 +104,7 @@ public class ABCProductos extends JFrame implements ActionListener {
                 int rowsAffected = st.executeUpdate(query);
                 JOptionPane.showMessageDialog(null,rowsAffected + " rows effected");
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e);
                 throw new RuntimeException(e);
             }
         } else if (x.getSource() == btnDel) { //boton eliminar
@@ -113,7 +114,7 @@ public class ABCProductos extends JFrame implements ActionListener {
                 int rowsAffected = st.executeUpdate(query);
                 JOptionPane.showMessageDialog(null,rowsAffected + " rows effected");
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e);
                 throw new RuntimeException(e);
             }
         } else if (x.getSource() == btnUpdt) { //boton actualizar
@@ -123,12 +124,12 @@ public class ABCProductos extends JFrame implements ActionListener {
                 int rowsAffected = st.executeUpdate(query);
                 JOptionPane.showMessageDialog(null,rowsAffected + " rows effected");
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e);
                 throw new RuntimeException(e);
             }
         } else if (x.getSource() == btnQry) { //boton consultar
             try {
-                //"producto" es mi tabla dentro de mi bd, cambienla segun sus necesidades, igual las columnas.
+                //"producto" es mi tabla dentro de mi bd, cambienla según sus necesidades, igual las columnas.
                 String query = "select * from producto where nombre = '" + textNom.getText() + "'";
                 Statement st = bdConnection.createStatement();
                 ResultSet resultSet = st.executeQuery(query);
@@ -139,7 +140,7 @@ public class ABCProductos extends JFrame implements ActionListener {
                 }
 
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e.toString());
+                JOptionPane.showMessageDialog(null,"Error al conectarse con la bd: " + e);
                 throw new RuntimeException(e);
             }
         }
