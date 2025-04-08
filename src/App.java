@@ -1,17 +1,10 @@
-import java.sql.Connection;
-
-import Database.DBFunc;
-import Interfaces.ABCProductos;
+import Interfaces.Menu;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        Connection mysql = DBFunc.ConectarBD("bd_inventario", "root", "Salsa1508");
+    public static void main(String[] args) {
         System.out.println("Hello, World!");
-        ABCProductos uiAbcProductos = new ABCProductos();
 
-        uiAbcProductos.setBdConnection(mysql);
-        uiAbcProductos.startUi();
-
-        
+        Menu menu = new Menu();
+        menu.startUi();
     }
 }
