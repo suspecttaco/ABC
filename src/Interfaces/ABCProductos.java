@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.event.*;
 import java.sql.*;
 
-public class ABCProductos extends JFrame implements ActionListener {
+public class ABCProductos implements ActionListener {
     Connection bdConnection;
     JPanel panel = new JPanel();
     JLabel labelNom = new JLabel();
@@ -44,7 +44,7 @@ public class ABCProductos extends JFrame implements ActionListener {
         panel.add(labelCant);
 
         labelLog.setText("Salida");
-        labelLog.setBounds(520, 50, 50, 50);
+        labelLog.setBounds(520, 50, 50, 30);
         panel.add(labelLog);
     }
 
@@ -64,8 +64,9 @@ public class ABCProductos extends JFrame implements ActionListener {
         //para el scroll el text area ya no se agrea solo el scroll se añade al JPanel
         textLog.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         textLog.setEditable(false);
+        textLog.setFocusable(false);
         JScrollPane scrollBar = new JScrollPane(textLog);
-        scrollBar.setBounds(520, 100, 350, 250);
+        scrollBar.setBounds(520, 80, 350, 250);
         scrollBar.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollBar.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         panel.add(scrollBar);
@@ -97,6 +98,12 @@ public class ABCProductos extends JFrame implements ActionListener {
         btnUpdt.addActionListener(this);
         panel.add(btnUpdt);
 
+    }
+
+    public void clearAll(){
+        textNom.setText("");
+        textCant.setText("");
+        textLog.setText("");
     }
 
     //eventos de los botones

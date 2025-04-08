@@ -18,7 +18,7 @@ public class Menu extends JFrame implements ActionListener {
     CardLayout cartasUi = (CardLayout) panel.getLayout();
 
     ABCProductos abcProductos;
-    //ABCContactos abcContactos;
+    ABCContactos abcContactos;
     //ABCCarros abcCarros;
 
     public void startUi(){
@@ -37,8 +37,14 @@ public class Menu extends JFrame implements ActionListener {
     private void setCartas(){
         abcProductos = new ABCProductos();
         abcProductos.startUi();
-        abcProductos.setBdConnection(mysql);
-        panel.add(abcProductos.getPanel(), "ABC de Productos");
+        abcProductos.setBdConnection(mysql); //esto ignoralo es mi desmadre con mysql xd
+        panel.add(abcProductos.getPanel(), "ABCProductos"); //este es el que importa
+
+        abcContactos = new ABCContactos();
+        abcContactos.startUi();
+        abcContactos.setBdConnection(mysql);
+        panel.add(abcContactos.getPanel(), "ABCContactos");
+
     }
 
     private void setButtons(){
@@ -53,11 +59,13 @@ public class Menu extends JFrame implements ActionListener {
 
         btnAbc2.setText("ABC de Contactos");
         btnAbc2.setSize(120,60);
+        btnAbc2.addActionListener(this);
         btnAbc2.setFont(new Font("Segoe UI", Font.PLAIN,16));
         btnPanel.add(btnAbc2);
 
         btnAbc3.setText("ABC de Carros");
         btnAbc3.setSize(120,60);
+        btnAbc3.addActionListener(this);
         btnAbc3.setFont(new Font("Segoe UI", Font.PLAIN,16));
         btnPanel.add(btnAbc3);
 
@@ -67,8 +75,13 @@ public class Menu extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnAbc1){
-            //TODO: fix
+            abcProductos.clearAll();
             cartasUi.show(panel, "ABCProductos");
+        } else if (e.getSource() == btnAbc2) {
+            abcContactos.clearAll();
+            cartasUi.show(panel, "ABCContactos");
+        } else if (e.getSource() == btnAbc3) {
+
         }
     }
 }
