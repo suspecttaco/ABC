@@ -1,8 +1,10 @@
 package Interfaces;
 
 import javax.swing.*;
+import java.awt.Component;
 import java.awt.Font;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class ABCProductos implements ActionListener {
@@ -34,12 +36,12 @@ public class ABCProductos implements ActionListener {
     //Config de etiquetas
     private void setLabels() {
         labelNom.setText("Nombre:");
-        labelNom.setBounds(50, 100, 120, 30);
+        labelNom.setBounds(50, 50, 120, 30);
         labelNom.setFont(new Font("Segoe UI", Font.PLAIN, 24));
         panel.add(labelNom);
 
         labelCant.setText("Cantidad:");
-        labelCant.setBounds(50, 150, 120, 30);
+        labelCant.setBounds(50, 100, 120, 30);
         labelCant.setFont(new Font("Segoe UI", Font.PLAIN, 24));
         panel.add(labelCant);
 
@@ -50,12 +52,12 @@ public class ABCProductos implements ActionListener {
 
     //config de textbox
     private void setTexts() {
-        textNom.setBounds(200, 100, 250, 37);
+        textNom.setBounds(200, 50, 250, 37);
         textNom.setFont(new Font("Segoe UI", Font.PLAIN, 24));
         textNom.setToolTipText("En este campo ingrese el nombre del producto a añadir/actualizar/consultar/eliminar.");
         panel.add(textNom);
 
-        textCant.setBounds(200, 150, 250, 37);
+        textCant.setBounds(200, 100, 250, 37);
         textCant.setFont(new Font("Segoe UI", Font.PLAIN, 24));
         textCant.setToolTipText("En este campo ingrese la cantidad del producto a añadir/actualizar.");
         panel.add(textCant);
@@ -101,9 +103,13 @@ public class ABCProductos implements ActionListener {
     }
 
     public void clearAll(){
-        textNom.setText("");
-        textCant.setText("");
-        textLog.setText("");
+        for (Component component : panel.getComponents()) {
+            if (component instanceof JTextField) {
+                ((JTextField) component).setText("");
+            } else if (component instanceof JTextArea) {
+                ((JTextArea) component).setText("");
+            }
+        }
     }
 
     //eventos de los botones

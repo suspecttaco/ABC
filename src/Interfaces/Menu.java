@@ -19,7 +19,7 @@ public class Menu extends JFrame implements ActionListener {
 
     ABCProductos abcProductos;
     ABCContactos abcContactos;
-    //ABCCarros abcCarros;
+    ABCCarros abcCarros;
 
     public void startUi(){
         menu.setTitle("Menu");
@@ -45,6 +45,10 @@ public class Menu extends JFrame implements ActionListener {
         abcContactos.setBdConnection(mysql);
         panel.add(abcContactos.getPanel(), "ABCContactos");
 
+        abcCarros = new ABCCarros();
+        abcCarros.startUi();
+        abcCarros.setBdConnection(mysql);
+        panel.add(abcCarros.getPanel(), "ABCCarros");
     }
 
     private void setButtons(){
@@ -81,7 +85,8 @@ public class Menu extends JFrame implements ActionListener {
             abcContactos.clearAll();
             cartasUi.show(panel, "ABCContactos");
         } else if (e.getSource() == btnAbc3) {
-
+            abcCarros.clearAll();
+            cartasUi.show(panel, "ABCCarros");
         }
     }
 }

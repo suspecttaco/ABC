@@ -1,13 +1,11 @@
 package Interfaces;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ABCContactos implements ActionListener {
     Connection bdConnection;
@@ -120,11 +118,13 @@ public class ABCContactos implements ActionListener {
     }
 
     public void clearAll(){
-        textNom.setText("");
-        textAp.setText("");
-        textNum.setText("");
-        textCorreo.setText("");
-        textLog.setText("");
+        for (Component component : panel.getComponents()) {
+            if (component instanceof JTextField) {
+                ((JTextField) component).setText("");
+            } else if (component instanceof JTextArea) {
+                ((JTextArea) component).setText("");
+            }
+        }
     }
 
     @Override
