@@ -1,32 +1,63 @@
 package Interfaces;
 
+import Database.DBFunc;
+
 import javax.swing.*;
+import java.sql.*;
 
 public class BetterMenu {
+    JFrame frame;
     private JPanel panel;
     private JTabbedPane tabbedPane1;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JButton consultarButton;
-    private JButton añadirButton;
-    private JButton eliminarButton;
-    private JButton actualizarButton;
-    private JTextArea textArea1;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextArea textArea2;
-    private JButton añadirButton1;
-    private JButton consultarButton1;
-    private JButton eliminarButton1;
-    private JButton actualizarButton1;
-    private JTextField textField7;
-    private JTextField textField8;
-    private JTextField textField9;
-    private JTextArea textArea3;
-    private JButton añadirButton2;
-    private JButton consultarButton2;
-    private JButton eliminarButton2;
-    private JButton actualizarButton2;
+    private JTextField textPNombre;
+    private JTextField textPCantidad;
+    private JButton consultarPButton;
+    private JButton añadirPButton;
+    private JButton eliminarPButton;
+    private JButton actualizarPButton;
+    private JTextArea textPLog;
+    private JTextField textCNombre;
+    private JTextField textCAp;
+    private JTextField textCTel;
+    private JTextField textCEmail;
+    private JTextArea textCLog;
+    private JButton añadirCButton;
+    private JButton consultarCButton;
+    private JButton eliminarCButton;
+    private JButton actualizarCButton;
+    private JTextField textAMarca;
+    private JTextField textAModelo;
+    private JTextField textAYear;
+    private JTextArea textALog;
+    private JButton añadirAButton;
+    private JButton consultaArButton;
+    private JButton eliminarAButton;
+    private JButton actualizarAButton;
+
+    ABCProductos productos;
+    ABCContactos contactos;
+    ABCCarros carros;
+
+    public BetterMenu() {
+        this.frame = new JFrame("Practica - Conexion con bases de datos");
+        this.frame.setContentPane(panel);
+        this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.frame.pack();
+        this.frame.setLocationRelativeTo(null);
+
+        Connection mysqlConn = DBFunc.ConectarBD("bd_inventario", "root", "Salsa1508");
+
+        this.productos = new ABCProductos();
+        this.contactos = new ABCContactos();
+        this.carros = new ABCCarros();
+
+        this.productos.setBdConnection(mysqlConn);
+        this.contactos.setBdConnection(mysqlConn);
+        this.carros.setBdConnection(mysqlConn);
+    }
+
+    public void startUi(){
+        frame.setVisible(true);
+
+    }
 }

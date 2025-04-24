@@ -52,7 +52,7 @@
                   <text value="Cantidad:"/>
                 </properties>
               </component>
-              <component id="ef4fa" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+              <component id="ef4fa" class="javax.swing.JTextField" binding="textPCantidad">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -60,7 +60,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="922df" class="javax.swing.JButton" binding="consultarButton" default-binding="true">
+              <component id="922df" class="javax.swing.JButton" binding="consultarPButton">
                 <constraints>
                   <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -68,7 +68,7 @@
                   <text value="Consultar"/>
                 </properties>
               </component>
-              <component id="5aaa8" class="javax.swing.JButton" binding="actualizarButton" default-binding="true">
+              <component id="5aaa8" class="javax.swing.JButton" binding="actualizarPButton">
                 <constraints>
                   <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -83,7 +83,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="2eb7d" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+                  <component id="2eb7d" class="javax.swing.JTextArea" binding="textPLog">
                     <constraints/>
                     <properties>
                       <editable value="false"/>
@@ -92,7 +92,7 @@
                   </component>
                 </children>
               </scrollpane>
-              <component id="6008a" class="javax.swing.JButton" binding="añadirButton" default-binding="true">
+              <component id="6008a" class="javax.swing.JButton" binding="añadirPButton">
                 <constraints>
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -100,7 +100,7 @@
                   <text value="Añadir"/>
                 </properties>
               </component>
-              <component id="5cc48" class="javax.swing.JButton" binding="eliminarButton" default-binding="true">
+              <component id="5cc48" class="javax.swing.JButton" binding="eliminarPButton">
                 <constraints>
                   <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -108,7 +108,7 @@
                   <text value="Eliminar"/>
                 </properties>
               </component>
-              <component id="2ff1a" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+              <component id="2ff1a" class="javax.swing.JTextField" binding="textPNombre">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -136,7 +136,7 @@
                   <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value="Salida:"/>
                 </properties>
               </component>
               <vspacer id="80c48">
@@ -162,7 +162,7 @@
                   <text value="Nombre(s):"/>
                 </properties>
               </component>
-              <component id="8dddc" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+              <component id="8dddc" class="javax.swing.JTextField" binding="textCNombre">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -178,7 +178,7 @@
                   <text value="Apellido(s):"/>
                 </properties>
               </component>
-              <component id="6a17a" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+              <component id="6a17a" class="javax.swing.JTextField" binding="textCAp">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -194,7 +194,7 @@
                   <text value="Telefono:"/>
                 </properties>
               </component>
-              <component id="f794d" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+              <component id="f794d" class="javax.swing.JTextField" binding="textCTel">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -202,7 +202,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="1bdbd" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+              <component id="1bdbd" class="javax.swing.JTextField" binding="textCEmail">
                 <constraints>
                   <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -223,7 +223,7 @@
                   <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value="Salida:"/>
                 </properties>
               </component>
               <scrollpane id="f691e">
@@ -233,7 +233,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="e8bfe" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
+                  <component id="e8bfe" class="javax.swing.JTextArea" binding="textCLog">
                     <constraints/>
                     <properties/>
                   </component>
@@ -249,7 +249,7 @@
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <component id="22f22" class="javax.swing.JButton" binding="añadirButton1" default-binding="true">
+              <component id="22f22" class="javax.swing.JButton" binding="añadirCButton">
                 <constraints>
                   <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -257,7 +257,7 @@
                   <text value="Añadir"/>
                 </properties>
               </component>
-              <component id="f76b0" class="javax.swing.JButton" binding="consultarButton1" default-binding="true">
+              <component id="f76b0" class="javax.swing.JButton" binding="consultarCButton">
                 <constraints>
                   <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -265,7 +265,7 @@
                   <text value="Consultar"/>
                 </properties>
               </component>
-              <component id="c0996" class="javax.swing.JButton" binding="eliminarButton1" default-binding="true">
+              <component id="c0996" class="javax.swing.JButton" binding="eliminarCButton">
                 <constraints>
                   <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -273,7 +273,7 @@
                   <text value="Eliminar"/>
                 </properties>
               </component>
-              <component id="dc889" class="javax.swing.JButton" binding="actualizarButton1" default-binding="true">
+              <component id="dc889" class="javax.swing.JButton" binding="actualizarCButton">
                 <constraints>
                   <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -312,7 +312,7 @@
                   <text value="Marca:"/>
                 </properties>
               </component>
-              <component id="b4e08" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+              <component id="b4e08" class="javax.swing.JTextField" binding="textAMarca">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -320,7 +320,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="ff643" class="javax.swing.JTextField" binding="textField8" default-binding="true">
+              <component id="ff643" class="javax.swing.JTextField" binding="textAModelo">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -328,7 +328,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="24225" class="javax.swing.JTextField" binding="textField9" default-binding="true">
+              <component id="24225" class="javax.swing.JTextField" binding="textAYear">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -357,7 +357,7 @@
                   <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value="Salida"/>
                 </properties>
               </component>
               <scrollpane id="16caa">
@@ -367,13 +367,15 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="e0da3" class="javax.swing.JTextArea" binding="textArea3" default-binding="true">
+                  <component id="e0da3" class="javax.swing.JTextArea" binding="textALog">
                     <constraints/>
-                    <properties/>
+                    <properties>
+                      <text value=""/>
+                    </properties>
                   </component>
                 </children>
               </scrollpane>
-              <component id="fb252" class="javax.swing.JButton" binding="añadirButton2" default-binding="true">
+              <component id="fb252" class="javax.swing.JButton" binding="añadirAButton">
                 <constraints>
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -381,7 +383,7 @@
                   <text value="Añadir"/>
                 </properties>
               </component>
-              <component id="858a9" class="javax.swing.JButton" binding="consultarButton2" default-binding="true">
+              <component id="858a9" class="javax.swing.JButton" binding="consultaArButton">
                 <constraints>
                   <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -389,7 +391,7 @@
                   <text value="Consultar"/>
                 </properties>
               </component>
-              <component id="6747d" class="javax.swing.JButton" binding="eliminarButton2" default-binding="true">
+              <component id="6747d" class="javax.swing.JButton" binding="eliminarAButton">
                 <constraints>
                   <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -397,7 +399,7 @@
                   <text value="Eliminar"/>
                 </properties>
               </component>
-              <component id="b5a5a" class="javax.swing.JButton" binding="actualizarButton2" default-binding="true">
+              <component id="b5a5a" class="javax.swing.JButton" binding="actualizarAButton">
                 <constraints>
                   <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
