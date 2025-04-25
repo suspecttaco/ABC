@@ -1,6 +1,8 @@
 package Database;
 
-import java.sql.*; //SQL library
+import java.sql.Connection; //SQL library
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBFunc {
      //Funcion para conectar con una base de datos local
